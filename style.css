@@ -13,3 +13,11 @@ body {
    	justify-content: center;
 	align-items: center;
 }
+.drag-file-area {
+	border: 2px dashed #7b2cbf;
+	border-radius: 40px;
+	margin: 10px 0 15px;
+	padding: 30px 50px;
+	width: 350px;
+	text-align: center;
+}
