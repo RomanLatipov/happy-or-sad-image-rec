@@ -8,12 +8,14 @@
 </head>
 <body>
     <form class="container" enctype='multipart/form-data'>
-        <div class="drag-file-area">
-            <span> file_upload </span>
-            <h3> Drag & drop any file here </h3>
-            <label class="label"> or <span> <input type="file" class="default-file-input"></span></span></label>
+        <div class="upload-files-container">
+            <div class="drag-file-area">
+                <span class="material-icons-outlined upload-icon"> file_upload </span>
+                <h3> Drag & drop any file here </h3>
+                <label class="label"> or <span> <input type="file" class="default-file-input"></span></span></label>
+            </div>
+            <button class="button" onclick="uploadImage()"> Upload </button>
         </div>
-        <button onclick="uploadImage()">Upload</button>
     </form>
     
     <script src="script.js"></script>
