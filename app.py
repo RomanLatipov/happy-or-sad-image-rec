@@ -7,9 +7,9 @@ CORS(app)
 
 @app.post("/upload")
 def test():
-    test = request.json
+    test = request.json["string"]
     print(test)
-    return test
+    return jsonify(test)
    
 
 
