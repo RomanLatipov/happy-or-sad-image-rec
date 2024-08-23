@@ -25,5 +25,5 @@ function uploadImage(event) {
         })
     })
     .then(res => res.json())
-    .then(data => console.log("successful return: ")) 
+    .then(data => console.log(data.response))
 }

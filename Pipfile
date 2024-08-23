@@ -8,8 +8,8 @@ tensorflow = "*"
 matplotlib = "*"
 numpy = "*"
 opencv-python = "*"
-flask = "*"
 flask-cors = "*"
+flask = {extras = ["async"], version = "*"}
 
 [dev-packages]
 
