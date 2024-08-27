@@ -11,6 +11,11 @@ fileInput.addEventListener("change", e => {
         // console.log(string64);
     }
 });
+function dislpayEmote(emote) {
+    const emoteText = document.querySelector(".emote");
+    emoteText.style.display = "block";
+    emoteText.innerHTML = emote;
+}
 
 function uploadImage(event) {
     event.preventDefault();
@@ -25,5 +30,7 @@ function uploadImage(event) {
         })
     })
     .then(res => res.json())
-    .then(data => console.log(data.response))
+    .then(data => {
+        console.log(data)
+        dislpayEmote(data.response)})
 }

@@ -15,7 +15,7 @@ async def base64ToImage(string64):
     yhat = new_model.predict(np.expand_dims(resize/255, 0))
     if yhat > 0.5:
         # print('Predicted class is happy')
-        return {"response": "happy"}
+        return {"response": "Happy"}
     else:
         # print('Predicted class is sad')
-        return {"response": "sad"}
+        return {"response": "Sad"}
