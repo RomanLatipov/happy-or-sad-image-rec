@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form class="container" enctype='multipart/form-data'>
+    <form class="form-container" enctype='multipart/form-data'>
         <div class="upload-files-container">
             <div class="drag-file-area">
                 <span class="material-icons-outlined upload-icon"> file_upload </span>
-                <h3> Drag & drop any file here </h3>
-                <label class="label"> or <span> <input type="file" class="default-file-input"></span></span></label>
+                <h3 class="dynamic-message"> Drag & drop any file here </h3>
+                <label class="label"> or <span class="browse-files"> <input type="file" class="default-file-input"/> 
+                    <span class="browse-files-text">browse file</span> <span>from device</span> </span> 
+                </label>
             </div>
             <button class="button" onclick="uploadImage(event)"> Upload </button>
         </div>
