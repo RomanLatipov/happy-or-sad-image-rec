@@ -2,6 +2,10 @@ const fileInput = document.querySelector(".default-file-input");
 const dragDropText = document.querySelector(".dynamic-message");
 const draggableFileArea = document.querySelector(".drag-file-area");
 
+const uploadedFile = document.querySelector(".file-block");
+const fileName = document.querySelector(".file-name");
+const fileSize = document.querySelector(".file-size");
+
 function toBase64(img) {
     const reader = new FileReader();
     reader.readAsDataURL(img);
@@ -29,7 +33,10 @@ let string64 = "";
 fileInput.addEventListener("change", e => {
     const imgFile = fileInput.files[0];
     toBase64(imgFile);
-    
+
+    fileName.innerHTML = fileInput.files[0].name;
+    fileSize.innerHTML = (fileInput.files[0].size/1024).toFixed(1) + " KB";
+    uploadedFile.style.cssText = "display: flex;";
 });
 function dislpayEmote(emote) {
     const emoteText = document.querySelector(".emote");
