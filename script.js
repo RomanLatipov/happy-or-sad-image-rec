@@ -5,6 +5,10 @@ const draggableFileArea = document.querySelector(".drag-file-area");
 const uploadedFile = document.querySelector(".file-block");
 const fileName = document.querySelector(".file-name");
 const fileSize = document.querySelector(".file-size");
+const progressBar = document.querySelector(".progress-bar");
+const removeFileButton = document.querySelector(".remove-file-icon");
+const uploadButton = document.querySelector(".upload-button");
+const fileFlag = 0;
 
 function toBase64(img) {
     const reader = new FileReader();
@@ -37,6 +41,20 @@ fileInput.addEventListener("change", e => {
     fileName.innerHTML = fileInput.files[0].name;
     fileSize.innerHTML = (fileInput.files[0].size/1024).toFixed(1) + " KB";
     uploadedFile.style.cssText = "display: flex;";
+    progressBar.style.width = 0;
+    let width = 0;
+        let id = setInterval(frame, 50);
+        function frame() {
+            if (width >= 390) {
+                clearInterval(id);
+                uploadButton.innerHTML = `<span class="material-icons-outlined upload-button-icon"> check_circle </span> Uploaded`;
+            } 
+            else {
+                width += 5;
+                progressBar.style.width = width + "px";
+            }
+        }
+    fileFlag = 0;
 });
 function dislpayEmote(emote) {
     const emoteText = document.querySelector(".emote");
